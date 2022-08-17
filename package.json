@@ -1,0 +1,51 @@
+{
+  "name": "jeggybot",
+  "version": "1.0.0",
+  "description": "Discord bot, by MrVaDiM4iK",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node shard.js"
+  },
+  "dependencies": {
+    "cpu-stat": "^2.0.1",
+    "node-superfetch": "",
+    "discord.js": "^11.5.1",
+    "express": "^4.17.1",
+    "i": "^0.3.6",
+    "moment": "^2.24.0",
+    "moment-duration-format": "^2.2.2",
+    "ms": "^2.1.2",
+    "node-opus": "^0.3.2",
+    "common-tags": "",
+    "moment-timezone": "",
+    "opusscript": "",
+    "strftime": "",
+    "rgbcolor": "",
+    "random-puppy": "^1.1.0",
+    "request": "^2.88.0",
+    "simple-youtube-api": "^5.2.1",
+    "snekfetch": "^4.0.4",
+    "sqlite": "^3.0.3",
+    "jimp": "",
+    "ffmpeg-binaries": "",
+    "mathjs": "",
+    "ffmpeg": "",
+    "stat": "0.0.5",
+    "ffmpeg-static": "",
+    "superagent": "^5.1.0",
+    "util": "^0.12.1",
+    "weather-js": "^2.0.0",
+    "ytdl-core": "^0.29.7",
+    "parse-ms": "",
+    "quick.db": "7.0.0-b21"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}

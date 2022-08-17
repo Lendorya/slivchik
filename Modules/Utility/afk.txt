@@ -1,0 +1,76 @@
+const Discord = require("discord.js");
+let db = require('quick.db');
+module.exports.run = async (client, message, args, err, succ) => {
+   if(db.fetch(`utility_${message.guild.id}`, 'true')) return;
+let suka = db.fetch(`afk_${message.author.id}`)
+  if(db.fetch(`langru_${message.guild.id}`)){
+    if(suka === null){
+  let reason = args.join(' ');
+      if(!reason) {
+      const newembed = new Discord.RichEmbed()
+     .setTitle('Пользователь отошёл')
+      .setDescription(`Пользователь **${message.author.tag}** отошёл.`)
+      .setFooter('JeggyBot, 2018-2019. ©', client.user.avatarURL)
+        .setTimestamp()
+    .setColor('ORANGE')
+      db.set(`afk_${message.author.id}`, 1)
+      message.channel.send(newembed);
+      } else {
+         const newembed = new Discord.RichEmbed()
+     .setTitle('Пользователь отошёл')
+      .setDescription(`Пользователь **${message.author.tag}** отошёл по причине **${reason}**.`)
+          .setFooter('JeggyBot, 2018-2019. ©', client.user.avatarURL)
+        .setTimestamp()
+    .setColor('ORANGE')
+      db.set(`afk_${message.author.id}`, 1)
+      message.channel.send(newembed);
+      }
+    } else if(suka === 1){
+       const newembed = new Discord.RichEmbed()
+   .setTitle('Пользователь вернулся')
+      .setDescription(`Пользователь **${message.author.tag}** вернулся.`)
+          .setFooter('JeggyBot, 2018-2019. ©', client.user.avatarURL)
+        .setTimestamp()
+    .setColor('GREEN')
+       message.channel.send(newembed);
+      db.delete(`afk_${message.author.id}`)
+}
+}
+  if(db.fetch(`langen_${message.guild.id}`)){
+    if(suka === null){
+  let reason = args.join(' ');
+      if(!reason) {
+      const newembed = new Discord.RichEmbed()
+     .setTitle('User in afk')
+      .setDescription(`User **${message.author.tag}** left.`)
+      .setFooter('JeggyBot, 2018-2019. ©', client.user.avatarURL)
+        .setTimestamp()
+    .setColor('ORANGE')
+      db.set(`afk_${message.author.id}`, 1)
+      message.channel.send(newembed);
+      } else {
+         const newembed = new Discord.RichEmbed()
+     .setTitle('User in afk')
+      .setDescription(`User **${message.author.tag}** left oт reason **${reason}**.`)
+          .setFooter('JeggyBot, 2018-2019. ©', client.user.avatarURL)
+        .setTimestamp()
+    .setColor('ORANGE')
+      db.set(`afk_${message.author.id}`, 1)
+      message.channel.send(newembed);
+      }
+    } else if(suka === 1){
+       const newembed = new Discord.RichEmbed()
+   .setTitle('User is back')
+      .setDescription(`User **${message.author.tag}** is back.`)
+          .setFooter('JeggyBot, 2018-2019. ©', client.user.avatarURL)
+        .setTimestamp()
+    .setColor('GREEN')
+       message.channel.send(newembed);
+      db.delete(`afk_${message.author.id}`)
+}
+}
+}
+    module.exports.help = {
+        name: ["afk"],
+        description: "Афк."
+    }
